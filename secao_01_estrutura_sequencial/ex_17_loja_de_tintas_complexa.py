@@ -31,7 +31,7 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 def calcular_latas_e_preco_de_tinta():
     from math import ceil
     area = float(input("Qual a area que vai ser pintada? (em metros quadrados): "))
-    litros = round(area/6 + (area/6*0.1),1)
+    litros = ceil(area/6 + (area/6*0.1))
     litros10 = round(area/6 + (area/6*0.1),1)
     qtdelata18 = ceil(litros/18)
     qtdelata36 = ceil(litros/3.6)
