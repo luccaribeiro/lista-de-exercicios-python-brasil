@@ -13,13 +13,8 @@ Faça um Programa que converta metros para centímetros.
 """
 
 
-<<<<<<< HEAD
+
 def converter_metros_para_centrimetros():
     metros = float(input("Digite quantos metros: "))
     print(f'Transformando para centímetros dá {metros*100} cm')
-=======
-def converter_metros_para_centimetros():
-    metros = float(input("Digite quantos metros: "))
-    print(f'Transformando para centímetros dá {metros*100} cm')
 
->>>>>>> 6f5afbcf7f8f43c0d32598aabe2687593c472f07
