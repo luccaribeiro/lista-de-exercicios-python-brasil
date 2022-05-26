@@ -1,9 +1,8 @@
+
 """
 Exercício 05 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaSequencial
-
 Faça um Programa que converta metros para centímetros.
-
     >>> from secao_01_estrutura_sequencial import ex_05_metros_para_centimetros
     >>> ex_05_metros_para_centimetros.input = lambda k: '1'
     >>> ex_05_metros_para_centimetros.converter_metros_para_centrimetros()
@@ -11,10 +10,16 @@ Faça um Programa que converta metros para centímetros.
     >>> ex_05_metros_para_centimetros.input = lambda k: '3.621'
     >>> ex_05_metros_para_centimetros.converter_metros_para_centrimetros()
     Transformando para centímetros dá 362.1 cm
-
 """
 
 
+<<<<<<< HEAD
 def converter_metros_para_centrimetros():
     metros = float(input("Digite quantos metros: "))
     print(f'Transformando para centímetros dá {metros*100} cm')
+=======
+def converter_metros_para_centimetros():
+    metros = float(input("Digite quantos metros: "))
+    print(f'Transformando para centímetros dá {metros*100} cm')
+
+>>>>>>> 6f5afbcf7f8f43c0d32598aabe2687593c472f07

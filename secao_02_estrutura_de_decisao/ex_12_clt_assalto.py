@@ -66,10 +66,15 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     elif salario_bruto > 2500:
         ir = salario_bruto*0.20
         ira = 20
+<<<<<<< HEAD
+=======
+    salario_bruto_str = f': R$   {float(salario_bruto):.2f}'
+>>>>>>> 6f5afbcf7f8f43c0d32598aabe2687593c472f07
     inss = salario_bruto*0.10
     sindicato = salario_bruto*0.03
     fgts = salario_bruto*0.11
     desconto = ir+inss+sindicato
+<<<<<<< HEAD
     print(f"""Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas}) ': R$ ' {salario_bruto:10}""")
     print(f"(-) IR ({ira}%)                    {': R$ ':>9} {ir:.2f}")
     print(f"(-) INSS (10%) {': R$ ':>20} {inss:.2f}")
@@ -77,4 +82,14 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     print(f"FGTS (11%) {': R$ ':>22} {fgts:.2f}")
     print(f"Total de descontos {': R$   ':>23} {desconto:.2f}")
     print(f"Salário Liquido {': R$ ':>24} {salario_bruto-desconto:.2f}")
+=======
+    ira_str = f': R$     {ir:.2f}'
+    print(f"""Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     {salario_bruto_str}""")
+    print(f"(-) IR ({ira}%)                               {ira_str}")
+    print(f"(-) INSS (10%)                                {': R$'} {inss:.2f}")
+    print(f"(-) Sindicato (3%)                            {': R$'} {sindicato:.2f}")
+    print(f"FGTS (11%)                                    {': R$'} {fgts:.2f}")
+    print(f"Total de descontos                            {': R$'} {desconto:.2f}")
+    print(f"Salário Liquido                               {': R$'} {salario_bruto-desconto:.2f}")
+>>>>>>> 6f5afbcf7f8f43c0d32598aabe2687593c472f07
 
