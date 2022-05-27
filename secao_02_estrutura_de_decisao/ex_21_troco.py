@@ -69,6 +69,6 @@ def calcular_troco(valor: int) -> str:
         print(" e",end=" ")
     if nota_1 == 1:
         print(f"""{nota_1} nota de R$ 1""",end="")
-    elif notas_10 > 1:
+    elif nota_1 > 1:
         print(f"""{nota_1} notas de R$ 1""",end="")
     print("""'""")
