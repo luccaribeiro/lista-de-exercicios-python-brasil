@@ -58,4 +58,42 @@ Mostre o restultado com duas casas decimais
 
 
 def calcular_preco_da_compra(kilos_de_morango: int, kilos_de_maca: int):
-    """Escreva aqui em baixo a sua solução"""
+    preco_morango = 0
+    preco_maca = 0
+    desconto = 0
+    kilo_total = kilos_de_morango + kilos_de_maca
+    if kilos_de_morango <= 5 and kilos_de_morango != 0:
+        preco_morango = kilos_de_morango*2.50
+        print(f"(+)  Morango  - valor:  R${preco_morango:>6.2f} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.50/kg")
+    elif kilos_de_morango > 5 and kilos_de_morango != 0:
+        preco_morango = kilos_de_morango*2.20
+        print(f"(+)  Morango  - valor:  R${preco_morango:>6.2f} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.20/kg")
+    if kilos_de_maca <= 5 and kilos_de_maca != 0:
+        preco_maca = kilos_de_maca*1.80
+        print(f"(+)  Maça     - valor:  R${preco_maca:>6.2f} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg")
+    elif kilos_de_maca > 5 and kilos_de_maca != 0:
+        preco_maca = kilos_de_maca*1.50
+        print(f"(+)  Maça     - valor:  R${preco_maca:>6.2f} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.50/kg")
+    preco_total = preco_maca + preco_morango
+
+    if kilo_total > 8 or preco_total > 25:
+        desconto = preco_total * 0.1
+        preco_total = preco_total * 0.9
+
+    print(f"(-)  Desconto - valor:  R${desconto:>6.2f}")
+    print(f"          Valor Total:  R${preco_total:>6.2f}")
+
+
+
+
+    """Uma fruteira está vendendo frutas com a seguinte tabela de preços:
+
+                      Até 5 Kg           Acima de 5 Kg
+Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
+Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
+
+Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00,
+receberá ainda um desconto de 10% sobre este total.
+Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o
+valor a ser pago pelo cliente.
+Mostre o restultado com duas casas decimais"""
