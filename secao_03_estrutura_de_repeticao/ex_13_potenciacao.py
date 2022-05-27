@@ -21,6 +21,6 @@ def calcular_potencia(base: int, expoente: int) -> int:
     soma = 0
     for i in range(expoente-1):
         soma = base*calculo
-        calc = soma
+        calculo = soma
     print(calculo)
 
