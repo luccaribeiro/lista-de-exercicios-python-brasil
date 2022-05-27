@@ -17,10 +17,10 @@ Não utilize a função de potência da linguagem.
 
 
 def calcular_potencia(base: int, expoente: int) -> int:
-    calc = base
+    calculo = base
     soma = 0
     for i in range(expoente-1):
-        soma = base*calc
+        soma = base*calculo
         calc = soma
-    print(calc)
+    print(calculo)
 
