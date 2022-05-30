@@ -98,3 +98,4 @@ def decompor_numero(numero: int):
             print(f"""'{numero_completo} = {centenas_str} e {segunda_parte}'""")
         else:
             print(f"""'{numero_completo} = {dezenas_str} e {unidade_str}'""")
+

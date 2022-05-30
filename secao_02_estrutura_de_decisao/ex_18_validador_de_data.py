@@ -28,7 +28,7 @@ def validar_data(data: str):
         datetime.strptime(data.strip(), '%d/%m/%Y')
         print("""'Data válida'""")
     except ValueError:
-        print("""'Data inválida'""")
+        print("'Data inválida'")
 
 
 
