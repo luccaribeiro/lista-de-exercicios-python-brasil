@@ -47,7 +47,7 @@ def calcular_latas_e_preco_de_tinta():
     while litros10 >= 3.6:
         qtdlata36c += 1
         litros10 -= 3.6
-    if litros10 < 3.6 and litros10 > 0:
+    if litros10 > 0:
         qtdlata36c += 1
     print(f'Para menor custo, você pode comprar {qtdlata18c} lata(s) de 18 litros e {qtdlata36c} galão(ões) de 3.6 litros a um custo de R$ {(qtdlata18c*80) + (qtdlata36c*25)}. Vão sobrar {round((qtdlata18c*18+qtdlata36c*3.6) - litros,1)} litro(s) de tinta.')
 

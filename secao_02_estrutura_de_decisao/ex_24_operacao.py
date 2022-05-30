@@ -47,7 +47,6 @@ def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
         resultado = n_1*n_2
         print(f"""Resultado: {resultado:.2f}""")
 
-
     if resultado > 0:
         pos_neg = 'positivo'
     elif resultado == 0:
