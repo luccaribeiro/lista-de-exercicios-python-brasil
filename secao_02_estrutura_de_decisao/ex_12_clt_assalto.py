@@ -1,3 +1,4 @@
+
 """
 Exercício 12 da seção de estrutura de decisão da Python Brasil:
 https://wiki.python.org.br/EstruturaDeDecisao
@@ -52,4 +53,31 @@ até R$ 99999,99
 
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
-    """Escreva aqui em baixo a sua solução"""
+    import decimal
+    salario_bruto = float(valor_hora * horas_trabalhadas)
+    if salario_bruto <= 900:
+        ir = 0
+        ira = 0
+    elif salario_bruto <= 1500:
+        ir = salario_bruto * 0.05
+        ira = 5
+    elif salario_bruto <= 2500:
+        ir = salario_bruto * 0.1
+        ira = 10
+    elif salario_bruto > 2500:
+        ir = salario_bruto*0.20
+        ira = 20
+    inss = salario_bruto*0.10
+    sindicato = salario_bruto*0.03
+    fgts = salario_bruto*0.11
+    desconto = ir+inss+sindicato
+    salario_liquido = salario_bruto-desconto
+    print(f"Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})".ljust(34), f"{': R$'} {salario_bruto:>8.2f}")
+    print(f"(-) IR ({ira}%)".ljust(34), f"{': R$'} {ir:>8.2f}")
+    print(f"(-) INSS (10%)".ljust(34), f"{': R$'} {inss:>8.2f}")
+    print(f"(-) Sindicato (3%)".ljust(34), f"{': R$'} {sindicato:>8.2f}")
+    print(f"FGTS (11%)".ljust(34), f"{': R$'} {fgts:>8.2f}")
+    print(f"Total de descontos".ljust(34), f"{': R$'} {desconto:>8.2f}")
+    print(f"Salário Liquido".ljust(34), f"{': R$'} {salario_liquido:>8.2f}")
+
+
