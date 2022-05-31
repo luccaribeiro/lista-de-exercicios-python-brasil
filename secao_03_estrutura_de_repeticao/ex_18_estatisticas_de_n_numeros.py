@@ -17,7 +17,19 @@ Faça um programa que, dado um conjunto de N números, determine o menor valor, 
 
 
 def calcular_estatisticas(*numeros) -> int:
-    if len(numeros) != 0:
-        print(f"'Maior valor: {max(numeros)}. Menor valor: {min(numeros)}. Soma: {sum(numeros)}'")
+    maior_valor = 0
+    menor_valor = 0
+    soma = 0
+    if len(numeros) < 1:
+        return 'Maior valor: não existe. Menor valor: não existe. Soma: 0'
     else:
-        print("'Maior valor: não existe. Menor valor: não existe. Soma: 0'")
+        for ind, num in enumerate(numeros):
+            soma += num
+            if ind == 0:
+                maior_valor = num
+                menor_valor = num
+            if num > maior_valor:
+                maior_valor = num
+            if num < menor_valor:
+                menor_valor = num
+        return f'Maior valor: {maior_valor}. Menor valor: {menor_valor}. Soma: {soma}'
