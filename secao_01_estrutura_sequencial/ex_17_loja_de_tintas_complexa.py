@@ -32,22 +32,15 @@ def calcular_latas_e_preco_de_tinta():
     from math import ceil
     area = float(input("Qual a area que vai ser pintada? (em metros quadrados): "))
     litros = ceil(area/6 + (area/6*0.1))
-    litros10 = round(area/6 + (area/6*0.1),1)
+    litros10 = round(area/6 + (area/6*0.1), 1)
     qtdelata18 = ceil(litros/18)
     qtdelata36 = ceil(litros/3.6)
-    qtdlata18c = 0
-    qtdlata36c = 0
     print(f"Você deve comprar {round(litros)} litros de tinta.")
     print(f'Você pode comprar {qtdelata18} lata(s) de 18 litros a um custo de R$ {qtdelata18*80}. Vão sobrar {float(round(qtdelata18*18-litros,1))} litro(s) de tinta.')
     print(f'Você pode comprar {qtdelata36} lata(s) de 3.6 litros a um custo de R$ {qtdelata36*25}. Vão sobrar {round(qtdelata36*3.6-litros,1)} litro(s) de tinta.')
-    while litros10 >= 18:
-        if litros10 >= 18:
-            qtdlata18c += 1
-            litros10 -= 18
-    while litros10 >= 3.6:
-        qtdlata36c += 1
-        litros10 -= 3.6
+    qtdlata18, litros10 = divmod(litros10,18)
+    qtdlata36, litros10 = divmod(litros10,3.6)
     if litros10 > 0:
-        qtdlata36c += 1
-    print(f'Para menor custo, você pode comprar {qtdlata18c} lata(s) de 18 litros e {qtdlata36c} galão(ões) de 3.6 litros a um custo de R$ {(qtdlata18c*80) + (qtdlata36c*25)}. Vão sobrar {round((qtdlata18c*18+qtdlata36c*3.6) - litros,1)} litro(s) de tinta.')
+        qtdlata36 += 1
+    print(f'Para menor custo, você pode comprar {int(qtdlata18)} lata(s) de 18 litros e {int(qtdlata36)} galão(ões) de 3.6 litros a um custo de R$ {(int(qtdlata18)*80) + (int(qtdlata36)*25)}. Vão sobrar {round((int(qtdlata18)*18+int(qtdlata36)*3.6) - litros,1)} litro(s) de tinta.')
 
