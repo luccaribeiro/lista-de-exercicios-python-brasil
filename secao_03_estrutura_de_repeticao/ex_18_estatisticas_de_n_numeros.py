@@ -16,6 +16,7 @@ Faça um programa que, dado um conjunto de N números, determine o menor valor, 
 """
 
 
+
 def calcular_estatisticas(*numeros) -> int:
     maior_valor = 0
     menor_valor = 0
@@ -33,3 +34,4 @@ def calcular_estatisticas(*numeros) -> int:
             if num < menor_valor:
                 menor_valor = num
         return f'Maior valor: {maior_valor}. Menor valor: {menor_valor}. Soma: {soma}'
+
