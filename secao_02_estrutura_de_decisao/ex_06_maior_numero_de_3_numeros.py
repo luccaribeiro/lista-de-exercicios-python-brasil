@@ -16,6 +16,14 @@ Faça um Programa que leia três números e mostre o maior deles.
 
 
 def calcular_maior_de_3_numeros(x, y, z):
-    numeros = [x,y,z]
-    print(f"""{max(numeros)}""")
+    maior = menor = x
+    if y > maior:
+        maior = y
+    if z > maior:
+        maior = z
+    if y < menor:
+        menor = y
+    if z < menor:
+        menor = y
+    print(f"{maior}")
 
