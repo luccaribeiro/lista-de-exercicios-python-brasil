@@ -118,4 +118,4 @@ até 50 pães, a partir do preço do pão informado pelo usuário
 
 
 def gerar_tabela_de_precos(preco_por_pao: float):
-    """Escreva aqui em baixo a sua solução"""
+    print("")
