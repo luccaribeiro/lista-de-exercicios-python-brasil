@@ -53,7 +53,6 @@ até R$ 99999,99
 
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
-    import decimal
     salario_bruto = float(valor_hora * horas_trabalhadas)
     if salario_bruto <= 900:
         ir = 0
@@ -78,6 +77,6 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     print(f"(-) Sindicato (3%)".ljust(34), f"{': R$'} {sindicato:>8.2f}")
     print(f"FGTS (11%)".ljust(34), f"{': R$'} {fgts:>8.2f}")
     print(f"Total de descontos".ljust(34), f"{': R$'} {desconto:>8.2f}")
-    print(f"Salário Liquido".ljust(34), f"{': R$'} {salario_liquido:>8.2f}")
+    print(f"Salário Liquido".ljust(34), f"{': R$'} {salario_liquido:8.2f}")
 
 
