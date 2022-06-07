@@ -38,4 +38,7 @@ Obs: Você deve verificar se o usuário não digitou o final menor que o inicial
 
 
 def gerar_tabuada(n: int, de: int, ate: int):
-    """Escreva aqui em baixo a sua solução"""
+    n = int(input("Qual número? "))
+    de = int(input("De: "))
+    ate = int(input("Ate: "))
+    if ate
