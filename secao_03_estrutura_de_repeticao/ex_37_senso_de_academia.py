@@ -55,5 +55,40 @@ da média das alturas e dos pesos dos clientes
 
 
 def rodar_senso():
-    print("")
+    cont = 1
+    pessoas = []
+    pessoa = []
+    mais_baixo = ''
+    mais_alto = ''
+    mais_gordo = ''
+    mais_leve = ''
+    while cont != '0':
+        cont = input("Nome: ")
+        if cont != '0':
+            pessoa.append(cont)
+            if len(pessoa) == 3:
+                pessoas.append(pessoa)
+                pessoa = []
+    for indice, p in enumerate(pessoas):
+        if indice == 1:
+            mais_baixo = p[1]
+            mais_alto = p[1]
+            mais_gordo = p[2]
+            mais_leve = p[2]
+        else:
+            if p[1] < mais_baixo:
+                mais_baixo = p[1]
+            if p[1] > mais_alto:
+                mais_alto = p[1]
+            if p[2] < mais_leve:
+                mais_leve = p[2]
+            if p[2] > mais_gordo:
+                mais_gordo = p[2]
+    print(f"""Cliente mais alto: Gigante, com {mais_alto} centímetros
+    Cliente mais baixo: Renzo, com {mais_baixo} centímetros
+    Cliente mais magro: Seco, com {mais_leve} kilos
+    Cliente mais gordo: Bolota, com {mais_gordo} kilos""")
+
+
+
 
