@@ -55,39 +55,33 @@ da média das alturas e dos pesos dos clientes
 
 
 def rodar_senso():
-    cont = 1
-    pessoas = []
-    pessoa = []
-    mais_baixo = ''
-    mais_alto = ''
-    mais_gordo = ''
-    mais_leve = ''
+    from statistics import mean
+    nomes = []
+    alturas = []
+    pesos = []
+    cont = input("")
     while cont != '0':
-        cont = input("Nome: ")
-        if cont != '0':
-            pessoa.append(cont)
-            if len(pessoa) == 3:
-                pessoas.append(pessoa)
-                pessoa = []
-    for indice, p in enumerate(pessoas):
-        if indice == 1:
-            mais_baixo = p[1]
-            mais_alto = p[1]
-            mais_gordo = p[2]
-            mais_leve = p[2]
-        else:
-            if p[1] < mais_baixo:
-                mais_baixo = p[1]
-            if p[1] > mais_alto:
-                mais_alto = p[1]
-            if p[2] < mais_leve:
-                mais_leve = p[2]
-            if p[2] > mais_gordo:
-                mais_gordo = p[2]
-    print(f"""Cliente mais alto: Gigante, com {mais_alto} centímetros
-    Cliente mais baixo: Renzo, com {mais_baixo} centímetros
-    Cliente mais magro: Seco, com {mais_leve} kilos
-    Cliente mais gordo: Bolota, com {mais_gordo} kilos""")
+        for item in range(3):
+            if cont != '0':
+                if item == 0:
+                    nomes.append(cont)
+                    cont = input("")
+                elif item == 1:
+                    cont = int(cont)
+                    alturas.append(cont)
+                    cont = input("")
+                elif item == 2:
+                    cont = int(cont)
+                    pesos.append(cont)
+                    cont = input("")
+    print(f"""Cliente mais alto: {nomes[alturas.index(max(alturas))]}, com {max(alturas)} centímetros
+Cliente mais baixo: {nomes[alturas.index(min(alturas))]}, com {min(alturas)} centímetros
+Cliente mais magro: {nomes[pesos.index(min(pesos))]}, com {min(pesos)} kilos
+Cliente mais gordo: {nomes[pesos.index(max(pesos))]}, com {max(pesos)} kilos
+--------------------------------------------------
+Media de altura dos clientes: {mean(alturas):.1f} centímetros
+Media de peso dos clientes: {mean(pesos):.1f} kilos""")
+
 
 
 
