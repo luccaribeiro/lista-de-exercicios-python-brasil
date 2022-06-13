@@ -55,6 +55,7 @@ para registrar a próxima compra.
 
 
 def rodar_programa_de_caixa():
+    #revisar
     print("Lojas Tabajara")
     cont = input(" ")
     cont = float(cont)
