@@ -48,4 +48,24 @@ Gabarito da Prova:
 
 
 def corrigir(*provas):
-    """Escreva aqui em baixo a sua solução"""
+    from statistics import mean
+    alunos = []
+    gabarito = ('A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A')
+    for pessoa in provas:
+        nota_aluno = 0
+        for indice, nota in enumerate(pessoa[1:]):
+            if nota == gabarito[indice]:
+                nota_aluno += 1
+        tupla = (pessoa[0], nota_aluno)
+        alunos.append(tupla)
+    print("Aluno                 Nota")
+    conceitos = []
+    for aluno, conceito in alunos:
+        print(f'{aluno:21s} {conceito:2d}')
+        conceitos.append(conceito)
+    print("---------------------------")
+    print(f'Média geral: {mean(conceitos):.1f}')
+    print(f'Maior nota: {max(conceitos)}')
+    print(f'Menor nota: {min(conceitos)}')
+    print(f'Total de Alunos: {len(alunos)}')
+
