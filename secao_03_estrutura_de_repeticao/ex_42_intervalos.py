@@ -39,4 +39,22 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 
 def listar_numeros_para_avaliacao():
-    """Escreva aqui em baixo a sua solução"""
+    cont = 1
+    numeros = []
+    limites = {'zero a 25': 0, '26 a 50': 0, '51 a 75': 0, '76 a 100': 0}
+    while cont >= 1:
+        cont = int(input(" "))
+        if cont > 0:
+            numeros.append(cont)
+    for n in numeros:
+        if n < 26:
+            limites['zero a 25'] += 1
+        elif n < 51:
+            limites['26 a 50'] += 1
+        elif n < 76:
+            limites['51 a 75'] += 1
+        elif n < 101:
+            limites['76 a 100'] += 1
+    for chave, resultado in limites.items():
+        if resultado != 0:
+            print(f"{resultado} número(s) entre o intervalo de {chave}")
