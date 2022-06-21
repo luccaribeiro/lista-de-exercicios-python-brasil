@@ -36,4 +36,14 @@ Mostre na tela:
 
 
 def lancar_dados(*valor_lancamentos):
-    """Escreva aqui em baixo a sua solução"""
+    from collections import Counter
+    contagem = Counter(valor_lancamentos).most_common()
+    print(f"""O dado foi lançado {len(valor_lancamentos)} vezes
+O número 1 caiu {valor_lancamentos.count(1)} vezes
+O número 2 caiu {valor_lancamentos.count(2)} vezes
+O número 3 caiu {valor_lancamentos.count(3)} vezes
+O número 4 caiu {valor_lancamentos.count(4)} vezes
+O número 5 caiu {valor_lancamentos.count(5)} vezes
+O número 6 caiu {valor_lancamentos.count(6)} vezes
+O lado com o número {contagem[0][0]} caiu mais vezes ({contagem[0][1]} vezes)""")
+
