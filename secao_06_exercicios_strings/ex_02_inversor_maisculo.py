@@ -20,5 +20,4 @@ letras maiúsculas ou minúsculas.
 
 
 def inversor(nome: str) -> str:
-    nome = nome.upper()
-    return f'{nome[::-1]}'
+    return f'{nome[::-1].upper()}'
