@@ -16,13 +16,8 @@ imprima o número de alunos com média maior ou igual a 7.0, e imprima separado 
 
 def calcular_media(*notas) -> int:
     from statistics import mean
-    mediamaior = []
-    mediamenor = []
-    for nota in notas:
-        if mean(nota)>= 7.0:
-            mediamaior.append(mean(nota))
-        else:
-            mediamenor.append(mean(nota))
+    mediamaior = [nota for nota in notas if mean(nota) >= 7.0]
+    mediamenor = [nota for nota in notas if mean(nota) < 7.0]
     print(f"Alunos com media >= 7.0: {len(mediamaior)}")
     print(f"Alunos com media < 7.0: {len(mediamenor)}")
 
