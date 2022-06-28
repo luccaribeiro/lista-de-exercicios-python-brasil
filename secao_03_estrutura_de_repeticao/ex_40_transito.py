@@ -27,4 +27,20 @@ Mostre os valores com uma casa decimail
 
 
 def calcular_estatisticas(*cidades):
-    """Escreva aqui em baixo a sua solução"""
+    from statistics import mean
+    cidade = []
+    veiculos = []
+    acidentes = []
+    indice = []
+    media = 0
+    for c in cidades:
+        cidade.append(c[0])
+        veiculos.append(c[1])
+        acidentes.append(c[2])
+        indice.append((c[2]*1000 / c[1]))
+        if c[1] >= 150_000:
+            media = c[2]
+    print(f"O maior índice de acidentes é de {cidade[indice.index(max(indice))]}, com {max(indice):.1f} acidentes por mil carros.")
+    print(f"O menor índice de acidentes é de {cidade[indice.index(min(indice))]}, com {min(indice):.1f} acidentes por mil carros.")
+    print(f"O média de veículos por cidade é de {mean(veiculos)}.")
+    print(f"A média de acidentes total nas cidades com menos de 150 mil carros é de {media:.1f} acidentes.")

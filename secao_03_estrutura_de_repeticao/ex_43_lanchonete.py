@@ -108,4 +108,39 @@ comprados.
 
 
 def fechar_conta(*itens):
-    """Escreva aqui em baixo a sua solução"""
+    cardapio = {
+        '100': ('Cachorro Quente', 1.20),
+        '101': ('Bauru Simples', 1.30),
+        '102': ('Bauru com Ovo', 1.50),
+        '103': ('Hamburger', 1.2),
+        '104': ('Cheeseburger', 1.3),
+        '105': ('Refrigerante', 1.),
+    }
+    pedidos = []
+    for item in itens:
+        pedidos.append(item)
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    quantidade = {
+        '100': 0,
+        '101': 0,
+        '102': 0,
+        '103': 0,
+        '104': 0,
+        '105': 0,}
+    for keys, values in pedidos:
+        for chave, valor in quantidade.items():
+            if keys == chave:
+                quantidade[keys] += values
+    tot = []
+    tot_quantia = 0
+    for id, quantia in quantidade.items():
+        if quantia != 0:
+            tot.append(cardapio[id][1]*quantia)
+            tot_quantia += quantia
+            print(f'| {cardapio[id][0]:16s} | {id}    | {cardapio[id][1]:<19.2f} | {quantia:10d} | {cardapio[id][1]*quantia:10.2f} |')
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    | {tot_quantia:10d} | {sum(tot):10.2f} |')
+    print('-----------------------------------------------------------------------------')

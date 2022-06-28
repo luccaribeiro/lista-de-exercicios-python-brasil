@@ -36,4 +36,16 @@ Faça um programa que mostre os n termos da Série a seguir:
 
 
 def imprimir_serie(n):
-    """Escreva aqui em baixo a sua solução"""
+    numerador = 1
+    denominador = 1
+    tot = 0
+    print("S = ", end="")
+    for i in range(n):
+        if i != n-1:
+            print(f'{numerador}/{denominador} + ', end="")
+        else:
+            print(f'{numerador}/{denominador}')
+        tot += numerador/denominador
+        numerador += 1
+        denominador += 2
+    print(f"soma = {tot}")

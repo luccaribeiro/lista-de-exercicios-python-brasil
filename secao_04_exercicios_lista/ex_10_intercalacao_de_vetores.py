@@ -18,5 +18,10 @@ deverão ser compostos pelos elementos intercalados dos dois outros vetores.
 
 
 def intercalar(lista_1: list, lista_2: list) -> list:
-    """Escreva aqui em baixo a sua solução"""
+    lista_3 = list(zip(lista_1, lista_2))
+    lista_print = []
+    for tupla in lista_3:
+        for item in tupla:
+            lista_print.append(item)
+    print(lista_print)
 

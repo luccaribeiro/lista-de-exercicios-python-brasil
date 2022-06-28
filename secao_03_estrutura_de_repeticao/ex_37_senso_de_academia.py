@@ -55,4 +55,34 @@ da média das alturas e dos pesos dos clientes
 
 
 def rodar_senso():
-    """Escreva aqui em baixo a sua solução"""
+    from statistics import mean
+    nomes = []
+    alturas = []
+    pesos = []
+    cont = input("")
+    while cont != '0':
+        for item in range(3):
+            if cont != '0':
+                if item == 0:
+                    nomes.append(cont)
+                    cont = input("")
+                elif item == 1:
+                    cont = int(cont)
+                    alturas.append(cont)
+                    cont = input("")
+                elif item == 2:
+                    cont = int(cont)
+                    pesos.append(cont)
+                    cont = input("")
+    print(f"""Cliente mais alto: {nomes[alturas.index(max(alturas))]}, com {max(alturas)} centímetros
+Cliente mais baixo: {nomes[alturas.index(min(alturas))]}, com {min(alturas)} centímetros
+Cliente mais magro: {nomes[pesos.index(min(pesos))]}, com {min(pesos)} kilos
+Cliente mais gordo: {nomes[pesos.index(max(pesos))]}, com {max(pesos)} kilos
+--------------------------------------------------
+Media de altura dos clientes: {mean(alturas):.1f} centímetros
+Media de peso dos clientes: {mean(pesos):.1f} kilos""")
+
+
+
+
+

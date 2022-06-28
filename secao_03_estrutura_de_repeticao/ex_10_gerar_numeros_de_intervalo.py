@@ -15,4 +15,11 @@ Faça um programa que receba dois números inteiros e gere os números inteiros 
 
 
 def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
-    """Escreva aqui em baixo a sua solução"""
+    print("""'""", end="")
+    for item in range(inicio,fim):
+        if not item == fim-1:
+            print(f"""{item}""", end=", ")
+        else:
+            print(f"""{item}'""")
+    if inicio > fim:
+        print("""'""")

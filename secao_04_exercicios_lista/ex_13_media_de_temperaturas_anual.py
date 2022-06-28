@@ -45,5 +45,13 @@ e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – F
 
 
 def temperaturas_acima_da_media():
-    """Escreva aqui sua solução: """
-
+    from statistics import mean
+    dicionario = {'Janeiro':0,'Fevereiro':0,'Março':0,'Abril':0,'Maio':0,'Junho':0,'Julho':0,'Agosto':0,'Setembro':0,'Outubro':0,'Novembro':0,'Dezembro':0}
+    for nome, valor in dicionario.items():
+        valor = int(input(""))
+        dicionario[nome] = valor
+    media = mean(dicionario.values())
+    print(f'Média anual: {media:.2f} Graus')
+    for indice, (key, value) in enumerate(dicionario.items()):
+        if value >= media:
+            print(f'{indice+1:>2} - {key}:'.ljust(19), f'{value}°')
